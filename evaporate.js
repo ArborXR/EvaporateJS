@@ -1923,7 +1923,8 @@
           AuthorizationMethod.makeSignParamsObject(con.signHeaders),
           awsRequest.stringToSign(),
           request.dateString,
-          awsRequest.canonicalRequest())
+          awsRequest.canonicalRequest(),
+          fileUpload)
           .catch(function (reason) {
             fileUpload.deferredCompletion.reject(reason);
             throw reason;
